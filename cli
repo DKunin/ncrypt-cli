@@ -1,0 +1,45 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const meow = require('meow');
+const crypter = require('./index');
+const hasha = require('hasha');
+const del = require('del');
+const fs = require('fs');
+
+const cli = meow('', {
+    alias: {
+        f: 'file',
+        k: 'key',
+        e: 'encrypt',
+        d: 'decrypt',
+        i: 'input'
+    }
+});
+
+function processResult(result) {
+    console.log(result);
+    if (cli.flags.i) {
+        del.sync([cli.flags.file], { force: true });
+    }
+}
+
+function processError(result) {
+    console.log(result);
+    if (cli.flags.i) {
+        del.sync([cli.flags.file], { force: true });
+    }
+}
+
+if (cli.flags.i) {
+    const fileName = `/tmp/${hasha(cli.flags.i, { algorithm: 'md5' })}`;
+    fs.writeFileSync(fileName, new Buffer(cli.flags.i));
+    cli.flags.file = cli.flags.f = fileName;
+}
+
+if (cli.flags.d) {
+    crypter.decrypt(cli.flags).then(processResult).catch(processError);
+} else {
+    crypter.encrypt(cli.flags).then(processResult).catch(processError);
+}
