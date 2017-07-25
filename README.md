@@ -1,4 +1,4 @@
-# [WIP]
+# NCrypt [WIP]
 
 > Simple cli module for encoding and decoding strings and files
 
