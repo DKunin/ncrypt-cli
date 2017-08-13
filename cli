@@ -10,13 +10,13 @@ const fs = require('fs');
 
 const cli = meow(`
         # Usage:
-            ncrypt --f <path> --e/--d --k <key>
+            ncrypt -f <path> -e/-d -k <key>
 
         # Flags
-            --f, --file: Path to file to be encrypted/decrypted
-            --e,--encode / --d,--decode: Action to take
-            --k, --key: Proided secret key to encode/decode
-            --i, --input: When encrypting - you can provide string instead of filename
+            -f, --file: Path to file to be encrypted/decrypted
+            -e,--encode / --d,--decode: Action to take
+            -k, --key: Proided secret key to encode/decode
+            -i, --input: When encrypting - you can provide string instead of filename
     `, {
     alias: {
         f: 'file',
