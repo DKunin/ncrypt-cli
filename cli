@@ -21,6 +21,7 @@ const cli = meow(`
     alias: {
         f: 'file',
         k: 'key',
+        h: 'help',
         e: 'encrypt',
         d: 'decrypt',
         i: 'input'
