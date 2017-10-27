@@ -1,6 +1,6 @@
 {
   "name": "ncrypt-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "main": "./cli",
   "bin": {
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/dkunin/decrypt-cli.git"
+    "url": "git://github.com/dkunin/ncrypt-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/dkunin/decrypt-cli/issues"
+    "url": "https://github.com/dkunin/ncrypt-cli/issues"
   },
   "scripts": {
     "test": "echo test",
@@ -19,17 +19,18 @@
     "dev": "node ./",
     "build": "NODE_ENV=production node ./"
   },
-  "homepage": "https://github.com/dkunin/decrypt-cli",
+  "homepage": "https://github.com/dkunin/ncrypt-cli",
   "keywords": [
     "cli,",
     "crypt,",
-    "decrypt"
+    "ncrypt"
   ],
   "license": "MIT",
   "description": "> This is an example file with default selections.",
   "dependencies": {
     "del": "3.0.0",
     "hasha": "3.0.0",
-    "meow": "3.7.0"
+    "meow": "3.7.0",
+    "ncrypt-module": "0.0.2"
   }
 }

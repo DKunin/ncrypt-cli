@@ -3,7 +3,7 @@
 'use strict';
 
 const meow = require('meow');
-const crypter = require('./index');
+const crypter = require('ncrypt-module');
 const hasha = require('hasha');
 const del = require('del');
 const fs = require('fs');
